@@ -11,23 +11,24 @@ namespace TurboRango.ImportadorXML
     public class RestaurantesXML
     {
         public string NomeArquivo { get; private set; }
+
         IEnumerable<XElement> restaurantes;
 
         /// <summary>
         /// Constrói RestaurantesXML a partir de um nome de arquivo.
         /// </summary>
-        /// <param name="nomeArquivo">Nome do arquivo XML a ser manipulado.</param>
+        /// <param name="nomeArquivo">Nome do arquivo XML a ser manipulado</param>
         public RestaurantesXML(string nomeArquivo)
         {
-            this.NomeArquivo = nomeArquivo;
+            NomeArquivo = nomeArquivo;
+            restaurantes = XDocument.Load(NomeArquivo).Descendants("restaurante");
         }
-
 
         public IList<string> ObterNomes()
         {
             //var resultado = new List<string>();
 
-            //var nodos = XDocument.Load(NomeArquivo).Descendants("restaurante");
+            //var nodos = restaurantes;
 
             //foreach (var item in nodos)
             //{
@@ -36,28 +37,71 @@ namespace TurboRango.ImportadorXML
 
             //return resultado;
 
-            return XDocument.Load(NomeArquivo).Descendants("restaurante").Select(n => n.Attribute("nome").Value).OrderBy(n => n).ToList();
+            /*var res = restaurantes
+                .Select(n => new Restaurante
+                {
+                    Nome = n.Attribute("nome").Value,
+                    Capacidade = Convert.ToInt32(n.Attribute("capacidade").Value)
+                });
+
+            return res.Where(x => x.Capacidade < 100).Select(x => x.Nome).OrderBy(x => x).ToList();
+            */
+
+            return (
+                from n in restaurantes
+                orderby n.Attribute("nome").Value descending
+                where Convert.ToInt32(n.Attribute("capacidade").Value) < 100
+                select n.Attribute("nome").Value
+            ).ToList();
+        }
+
+        public IList<string> OrdenarPorNomeAsc()
+        {
+            return (
+                from n in restaurantes
+                orderby n.Attribute("nome").Value
+                select n.Attribute("nome").Value
+            ).ToList();
         }
 
         public double CapacidadeMedia()
         {
             return (
-                from n in XDocument.Load(NomeArquivo).Descendants("restaurante")
+                from n in restaurantes
                 select Convert.ToInt32(n.Attribute("capacidade").Value)
             ).Average();
         }
 
         public double CapacidadeMaxima()
         {
-            return (
-                from n in XDocument.Load(NomeArquivo).Descendants("restaurante")
+            var mad = (
+                from n in restaurantes
                 select Convert.ToInt32(n.Attribute("capacidade").Value)
-            ).Max();
+            );
+
+            return mad.Max();
         }
 
-        public IList<Restaurante> AgruparPorCategoria()
+        public Object AgruparPorCategoria()
         {
-            throw new NotImplementedException();
+            return (from n in restaurantes
+                      group n by n.Attribute("categoria").Value into g
+                      select new { 
+                          Categoria = g.Key,
+                          Restaurantes = g.ToList(),
+                          SomatorioCapacidades = g.Sum(x => Convert.ToInt32(x.Attribute("capacidade").Value))
+                      }).ToList();
         }
+
+        public IList<string> ObterSites()
+        {
+            return restaurantes.Descendants("site").Select(n => n.Value).ToList();
+        }
+
+        //public IList<Categoria> ApenasComUmRestaurante()
+        //{
+        //    restaurantes.Where( DESce )
+        //}
+
     }
 }
