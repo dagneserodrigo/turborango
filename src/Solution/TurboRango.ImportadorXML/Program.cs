@@ -48,6 +48,7 @@ namespace TurboRango.ImportadorXML
 
             #endregion
 
+            #region LINQ
             const string nomeArquivo = "restaurantes.xml";
 
             var restaurantesXML = new RestaurantesXML(nomeArquivo);
@@ -55,11 +56,26 @@ namespace TurboRango.ImportadorXML
             var capacidadeMedia = restaurantesXML.CapacidadeMedia();
             var porCategoria = restaurantesXML.AgruparPorCategoria();
             var site = restaurantesXML.ObterSites();
+            var apenasComUmRestaurante = restaurantesXML.ApenasComUmRestaurante();
+            var todosRestaurantes = restaurantesXML.TodosRestaurantes().ToList();
 
             //var nomes = restaurantesXML.ObterNomes();
             //var capacidadeMedia = restaurantesXML.CapacidadeMedia();
             //var capacidadeMaxima = restaurantesXML.CapacidadeMaxima();
-            
+
+            #endregion
+
+            #region ADO.NEt
+            var connString = @"Data Source=.;Initial Catalog=TurboRango_dev;Integrated Security=True";
+            var acessoAoBanco = new CarinhaQueManipulaOBanco(connString);
+
+            acessoAoBanco.Inserir(new Contato { 
+                Site = "www.dogao.gif",
+                Telefone = "1234456789"
+            });
+
+            IEnumerable<Contato> contatos = acessoAoBanco.GetContatos();
+            #endregion
         }
     }
 }
