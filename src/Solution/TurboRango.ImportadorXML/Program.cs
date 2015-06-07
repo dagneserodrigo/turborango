@@ -66,16 +66,30 @@ namespace TurboRango.ImportadorXML
             #endregion
 
             #region ADO.NEt
-            var connString = @"Data Source=.;Initial Catalog=TurboRango_dev;Integrated Security=True";
-            var acessoAoBanco = new CarinhaQueManipulaOBanco(connString);
+            //var connString = @"Data Source=.;Initial Catalog=TurboRango_dev;Integrated Security=True";
+            //var acessoAoBanco = new CarinhaQueManipulaOBanco(connString);
 
-            acessoAoBanco.Inserir(new Contato { 
-                Site = "www.dogao.gif",
-                Telefone = "1234456789"
-            });
+            //acessoAoBanco.Inserir(new Contato { 
+            //    Site = "www.dogao.gif",
+            //    Telefone = "1234456789"
+            //});
 
-            IEnumerable<Contato> contatos = acessoAoBanco.GetContatos();
+           // IEnumerable<Contato> contatos = acessoAoBanco.GetContatos();
             #endregion
+
+            #region Exercício 2
+            var connstring = @"data source=.;initial catalog=turborango_dev;integrated security=true";
+            var acessoaobanco = new CarinhaQueManipulaOBanco(connstring);
+
+            foreach (var restauranteAtual in todosRestaurantes)
+            {
+                acessoaobanco.InserirRestaurante(restauranteAtual);
+            }
+
+
+            #endregion
+
+
         }
     }
 }
