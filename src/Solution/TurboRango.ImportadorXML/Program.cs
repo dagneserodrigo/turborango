@@ -81,15 +81,36 @@ namespace TurboRango.ImportadorXML
             var connstring = @"data source=.;initial catalog=turborango_dev;integrated security=true";
             var acessoaobanco = new CarinhaQueManipulaOBanco(connstring);
 
-            foreach (var restauranteAtual in todosRestaurantes)
-            {
-                acessoaobanco.InserirRestaurante(restauranteAtual);
-            }
+            //foreach (var restauranteAtual in todosRestaurantes)
+            //{
+            //    acessoaobanco.InserirRestaurante(restauranteAtual);
+            //}
 
 
             #endregion
 
-
+            #region Exercício 3
+            //acessoaobanco.Remover(1);
+            acessoaobanco.Atualizar(2, new Restaurante
+            {
+                Capacidade = 123,
+                Nome = "teste atualização",
+                Categoria = Categoria.Comum,
+                Contato = new Contato
+                {
+                    Site = "www.google.com",
+                    Telefone = "192837465",
+                },
+                Localizacao = new Localizacao
+                {
+                    Bairro = "Novo Bairro",
+                    Logradouro = "Novo Logradouro",
+                    Latitude = 546564,
+                    Longitude = 234234,
+                },
+            });
+            var restaurantes = acessoaobanco.GetRestaurantes();
+            #endregion
         }
     }
 }
