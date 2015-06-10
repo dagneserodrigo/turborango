@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - TurboRango</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @{bool userLogged = User.Identity.IsAuthenticated ? true : false;}
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -21,7 +20,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (userLogged)
+                    @if (User.Identity.IsAuthenticated)
                     {
                     <li>@Html.ActionLink("Restaurantes", "Index", "Restaurantes")</li>
                     }
