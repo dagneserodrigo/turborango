@@ -11,6 +11,7 @@ using TurboRango.Web.Models;
 
 namespace TurboRango.Web.Controllers
 {
+    [Authorize]
     public class RestaurantesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,7 +19,10 @@ namespace TurboRango.Web.Controllers
         // GET: Restaurantes
         public ActionResult Index()
         {
-            return View(db.Restaurantes.ToList());
+            var restaurantes = db.Restaurantes
+                .Include(x => x.Contato)
+                .Include(x => x.Localizacao);
+            return View(restaurantes.ToList());
         }
 
         // GET: Restaurantes/Details/5
@@ -114,6 +118,15 @@ namespace TurboRango.Web.Controllers
             db.Restaurantes.Remove(restaurante);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [AllowAnonymous]
+        public JsonResult Restaurantes()
+        {
+            var todos = db.Restaurantes.Include(_ => _.Localizacao).ToList();
+            return Json(new {
+                restaurantes = todos, camigoal = DateTime.Now
+            }, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)
