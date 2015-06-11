@@ -161,6 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PratosController.cs" />
     <Compile Include="Controllers\RestaurantesController.cs" />
     <Compile Include="Controllers\SorteiosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,6 +251,11 @@
     <Content Include="Views\Shared\DisplayTemplates\Localizacao.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Contato.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Localizacao.cshtml" />
+    <Content Include="Views\Pratos\Create.cshtml" />
+    <Content Include="Views\Pratos\Delete.cshtml" />
+    <Content Include="Views\Pratos\Details.cshtml" />
+    <Content Include="Views\Pratos\Edit.cshtml" />
+    <Content Include="Views\Pratos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
