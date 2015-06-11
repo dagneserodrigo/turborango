@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 namespace TurboRango.Dominio
 {
     public class Restaurante : Entidade
@@ -8,5 +9,6 @@ namespace TurboRango.Dominio
         public Categoria Categoria { get; set; }
         public Contato Contato { get; set; }
         public Localizacao Localizacao { get; set; }
+        public ICollection<Prato> Cardapio { get; set; }
     }
 }

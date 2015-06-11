@@ -174,6 +174,10 @@
     <Compile Include="Migrations\201506082001176_CriarEntidades.Designer.cs">
       <DependentUpon>201506082001176_CriarEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506111831218_CriarEntidadePrato.cs" />
+    <Compile Include="Migrations\201506111831218_CriarEntidadePrato.Designer.cs">
+      <DependentUpon>201506111831218_CriarEntidadePrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -242,6 +246,10 @@
     <Content Include="Views\Restaurantes\Edit.cshtml" />
     <Content Include="Views\Restaurantes\Index.cshtml" />
     <Content Include="Views\Sorteios\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Contato.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Localizacao.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Contato.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Localizacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506082001176_CriarEntidades.resx">
       <DependentUpon>201506082001176_CriarEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506111831218_CriarEntidadePrato.resx">
+      <DependentUpon>201506111831218_CriarEntidadePrato.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
