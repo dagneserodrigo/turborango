@@ -102,6 +102,8 @@ namespace TurboRango.Web.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(restaurante).State = EntityState.Modified;
+                db.Entry(restaurante.Contato).State = EntityState.Modified;
+                db.Entry(restaurante.Localizacao).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

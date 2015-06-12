@@ -1,6 +1,7 @@
 ﻿@model TurboRango.Dominio.Contato
 
 <div class="form-horizontal">
+    @Html.HiddenFor(model => model.Id)
     <div class="form-group">
         @Html.LabelFor(model => model.Site, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
