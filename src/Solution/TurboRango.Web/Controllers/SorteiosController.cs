@@ -9,11 +9,11 @@ namespace TurboRango.Web.Controllers
 {
     public class SorteiosController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Sorteios
         public ActionResult Index()
         {
-            ViewBag.QtdRestaurantes = 33;
+            @ViewBag.QtdRestaurantes = db.Restaurantes.Count().ToString();
             return View();
         }
     }

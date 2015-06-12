@@ -38,11 +38,10 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "Pizza de calabresa",
-                        Valor = 8,
-                        Ingredientes = "mollho de tomate, queijo, calabresa",
+                        Nome = "Buffet livre",
+                        Valor = 12,
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
+                        Descricao = "Grande variedade de comidas."
                     }
                 },
 
@@ -64,11 +63,11 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "Semente",
-                        Valor = 8,
-                        Ingredientes = "nasce arvore",
+                        Nome = "Pizza de tofu e quiche de espinafre",
+                        Valor = 6,
+                        Ingredientes = "Tofu, queijo e epinafre",
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
+                        Descricao = "Lanche vegetariano."
                     }
                 },
 
@@ -90,11 +89,11 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "Taco",
-                        Valor = 8,
-                        Ingredientes = "pimenta",
+                        Nome = "Mojito",
+                        Valor = 5,
+                        Ingredientes = "Rum, suco de limão, hortlã e água com gás",
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
+                        Descricao = "Mi casa su casa"
                     }
                 },
 
@@ -117,11 +116,10 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "Picanha",
-                        Valor = 8,
-                        Ingredientes = "assada pelo nunes",
+                        Nome = "Espeto corrido",
+                        Valor = 18,
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
+                        Descricao = "Grande variedade de carnes."
                     }
                 },
 
@@ -143,11 +141,11 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "Sushi",
+                        Nome = "Yakisoba",
                         Valor = 8,
-                        Ingredientes = "peixe cru",
+                        Ingredientes = "Macarrão japones e legumes",
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
+                        Descricao = "Macarrão japonês frito com legumes"
                     }
                 },
 
@@ -170,11 +168,11 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "Sushi",
-                        Valor = 8,
-                        Ingredientes = "peixe cru",
+                        Nome = "Missoshiro",
+                        Valor = 4,
+                        Ingredientes = "soja",
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
+                        Descricao = "Sopa de soja."
                     }
                 },
 
@@ -197,63 +195,10 @@ namespace TurboRango.Web.Migrations
                     },
                     PratoDoDia = new PratoDoDia
                     {
-                        Nome = "xis salda",
-                        Valor = 20,
-                        Ingredientes = "pão, queijo, hamburguer",
+                        Nome = "Xis filé com fritas",
+                        Valor = 10,
+                        Ingredientes = "Hamburguer, alface, queijo, molho especial, cebola, picles em um pão sem gergelim",
                         DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
-                    }
-                },
-                new Restaurante
-                {
-                    Nome = "Teste",
-                    Capacidade = 100,
-                    Categoria = Categoria.Comum,
-                    Localizacao = new Localizacao
-                    {
-                        Bairro = "Liberdade",
-                        Logradouro = "Rua Sete de Setembro, 1045 - Liberdade",
-                        Latitude = -29.712571,
-                        Longitude = -51.13636
-                    },
-                    Contato = new Contato
-                    {
-                        Site = "www.garfao.com",
-                        Telefone = "(51) 3587-7700"
-                    },
-                    PratoDoDia = new PratoDoDia
-                    {
-                        Nome = "asdas",
-                        Valor = 5,
-                        Ingredientes = "dsfsdf",
-                        DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
-                    }
-                },
-                new Restaurante
-                {
-                    Nome = "Tesqwerqwrqwerte",
-                    Capacidade = 100,
-                    Categoria = Categoria.Comum,
-                    Localizacao = new Localizacao
-                    {
-                        Bairro = "Liberdade",
-                        Logradouro = "Rua Sete de Setembro, 1045 - Liberdade",
-                        Latitude = -29.712571,
-                        Longitude = -51.13636
-                    },
-                    Contato = new Contato
-                    {
-                        Site = "www.garfao.com",
-                        Telefone = "(51) 3587-7700"
-                    },
-                    PratoDoDia = new PratoDoDia
-                    {
-                        Nome = "asdas",
-                        Valor = 5,
-                        Ingredientes = "dsfsdf",
-                        DataAtualizacao = DateTime.Now,
-                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 }
             );

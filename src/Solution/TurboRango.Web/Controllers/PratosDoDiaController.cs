@@ -11,6 +11,7 @@ using TurboRango.Web.Models;
 
 namespace TurboRango.Web.Controllers
 {
+    [Authorize]
     public class PratosDoDiaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
