@@ -21,10 +21,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sorteio", "Index", "Sorteios")</li>
+                    <li>@Html.ActionLink("Restaurantes", "RestaurantesLista", "Restaurantes")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <li>@Html.ActionLink("Restaurantes", "Index", "Restaurantes")</li>
-                    <li>@Html.ActionLink("Pratos", "Index", "Pratos")</li>
+                    <li>@Html.ActionLink("Lista Restaurantes", "Index", "Restaurantes")</li>
+                    <li>@Html.ActionLink("Lista Pratos do dia", "Index", "PratosDoDia")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

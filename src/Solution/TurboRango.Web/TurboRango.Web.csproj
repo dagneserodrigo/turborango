@@ -161,7 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PratosController.cs" />
+    <Compile Include="Controllers\PratosDoDiaController.cs" />
     <Compile Include="Controllers\RestaurantesController.cs" />
     <Compile Include="Controllers\SorteiosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -175,14 +175,19 @@
     <Compile Include="Migrations\201506082001176_CriarEntidades.Designer.cs">
       <DependentUpon>201506082001176_CriarEntidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506111831218_CriarEntidadePrato.cs" />
-    <Compile Include="Migrations\201506111831218_CriarEntidadePrato.Designer.cs">
-      <DependentUpon>201506111831218_CriarEntidadePrato.cs</DependentUpon>
+    <Compile Include="Migrations\201506120158082_addPratoDoDia.cs" />
+    <Compile Include="Migrations\201506120158082_addPratoDoDia.Designer.cs">
+      <DependentUpon>201506120158082_addPratoDoDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506120209406_addDescricaoToPratoDoDia.cs" />
+    <Compile Include="Migrations\201506120209406_addDescricaoToPratoDoDia.Designer.cs">
+      <DependentUpon>201506120209406_addDescricaoToPratoDoDia.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PratoDoDiaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -251,11 +256,12 @@
     <Content Include="Views\Shared\DisplayTemplates\Localizacao.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Contato.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Localizacao.cshtml" />
-    <Content Include="Views\Pratos\Create.cshtml" />
-    <Content Include="Views\Pratos\Delete.cshtml" />
-    <Content Include="Views\Pratos\Details.cshtml" />
-    <Content Include="Views\Pratos\Edit.cshtml" />
-    <Content Include="Views\Pratos\Index.cshtml" />
+    <Content Include="Views\PratosDoDia\Create.cshtml" />
+    <Content Include="Views\PratosDoDia\Delete.cshtml" />
+    <Content Include="Views\PratosDoDia\Details.cshtml" />
+    <Content Include="Views\PratosDoDia\Edit.cshtml" />
+    <Content Include="Views\PratosDoDia\Index.cshtml" />
+    <Content Include="Views\Restaurantes\RestaurantesLista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,8 +286,11 @@
     <EmbeddedResource Include="Migrations\201506082001176_CriarEntidades.resx">
       <DependentUpon>201506082001176_CriarEntidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506111831218_CriarEntidadePrato.resx">
-      <DependentUpon>201506111831218_CriarEntidadePrato.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506120158082_addPratoDoDia.resx">
+      <DependentUpon>201506120158082_addPratoDoDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506120209406_addDescricaoToPratoDoDia.resx">
+      <DependentUpon>201506120209406_addDescricaoToPratoDoDia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

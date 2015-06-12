@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace TurboRango.Dominio
 {
-    public class Prato : Entidade
+    public class PratoDoDia : Entidade
     {
         public string Nome { get; set; }
         public string  Ingredientes { get; set; }
         public decimal? Valor { get; set; }
         public DateTime? DataAtualizacao { get; set; }
+        public string Descricao { get; set; }
     }
 }

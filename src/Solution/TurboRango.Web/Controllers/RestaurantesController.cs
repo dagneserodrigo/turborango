@@ -25,6 +25,17 @@ namespace TurboRango.Web.Controllers
             return View(restaurantes.ToList());
         }
 
+        // GET: Restaurantes
+        [AllowAnonymous]
+        public ActionResult RestaurantesLista()
+        {
+            var restaurantes = db.Restaurantes
+                .Include(x => x.Contato)
+                .Include(x => x.Localizacao)
+                .Include(x => x.PratoDoDia);
+            return View(restaurantes.ToList());
+        }
+
         // GET: Restaurantes/Details/5
         public ActionResult Details(int? id)
         {

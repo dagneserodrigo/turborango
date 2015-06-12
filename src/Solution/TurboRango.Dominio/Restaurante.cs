@@ -9,6 +9,6 @@ namespace TurboRango.Dominio
         public Categoria Categoria { get; set; }
         public Contato Contato { get; set; }
         public Localizacao Localizacao { get; set; }
-        public ICollection<Prato> Cardapio { get; set; }
+        public PratoDoDia PratoDoDia { get; set; }
     }
 }

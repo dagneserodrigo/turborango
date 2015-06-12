@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TurboRango.Dominio.Prato>
+﻿@model IEnumerable<TurboRango.Dominio.PratoDoDia>
 
 @{
     ViewBag.Title = "Index";
@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DataAtualizacao)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
         <th></th>
     </tr>
 
@@ -39,6 +42,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataAtualizacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

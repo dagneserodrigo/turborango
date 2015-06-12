@@ -36,15 +36,13 @@ namespace TurboRango.Web.Migrations
                         Site = "www.garfao.com",
                         Telefone = "(51) 3587-7700"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "Pizza de calabresa",
-                            Valor = 8,
-                            Ingredientes = "mollho de tomate, queijo, calabresa",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "Pizza de calabresa",
+                        Valor = 8,
+                        Ingredientes = "mollho de tomate, queijo, calabresa",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
 
@@ -64,15 +62,13 @@ namespace TurboRango.Web.Migrations
                     {
                         Telefone = "3595-5258"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "Semente",
-                            Valor = 8,
-                            Ingredientes = "nasce arvore",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "Semente",
+                        Valor = 8,
+                        Ingredientes = "nasce arvore",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
 
@@ -92,15 +88,13 @@ namespace TurboRango.Web.Migrations
                     {
                         Telefone = "3279-8828"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "Taco",
-                            Valor = 8,
-                            Ingredientes = "pimenta",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "Taco",
+                        Valor = 8,
+                        Ingredientes = "pimenta",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
 
@@ -121,15 +115,13 @@ namespace TurboRango.Web.Migrations
                         Site = "www.grupoprimaveranh.com.br",
                         Telefone = "3595-8081"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "Picanha",
-                            Valor = 8,
-                            Ingredientes = "assada pelo nunes",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "Picanha",
+                        Valor = 8,
+                        Ingredientes = "assada pelo nunes",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
 
@@ -149,15 +141,13 @@ namespace TurboRango.Web.Migrations
                     {
                         Telefone = "3066-6660"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "Sushi",
-                            Valor = 8,
-                            Ingredientes = "peixe cru",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "Sushi",
+                        Valor = 8,
+                        Ingredientes = "peixe cru",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
 
@@ -178,15 +168,13 @@ namespace TurboRango.Web.Migrations
                         Site = "www.haisaiko.com.br",
                         Telefone = "3593-5757"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "Sushi",
-                            Valor = 8,
-                            Ingredientes = "peixe cru",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "Sushi",
+                        Valor = 8,
+                        Ingredientes = "peixe cru",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
 
@@ -207,22 +195,13 @@ namespace TurboRango.Web.Migrations
                         Site = "www.picapaulanches.com",
                         Telefone = "(51) 3593-8079"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "xis salda",
-                            Valor = 20,
-                            Ingredientes = "pão, queijo, hemburguer",
-                            DataAtualizacao = DateTime.Now,
-                        },
-                        new Prato
-                        {
-                            Nome = "arroz e feijao",
-                            Valor = 5,
-                            Ingredientes = "arroz e feijao",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "xis salda",
+                        Valor = 20,
+                        Ingredientes = "pão, queijo, hamburguer",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 },
                 new Restaurante
@@ -242,15 +221,39 @@ namespace TurboRango.Web.Migrations
                         Site = "www.garfao.com",
                         Telefone = "(51) 3587-7700"
                     },
-                    Cardapio = new Collection<Prato>
+                    PratoDoDia = new PratoDoDia
                     {
-                        new Prato
-                        {
-                            Nome = "asdas",
-                            Valor = 5,
-                            Ingredientes = "dsfsdf",
-                            DataAtualizacao = DateTime.Now,
-                        }
+                        Nome = "asdas",
+                        Valor = 5,
+                        Ingredientes = "dsfsdf",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
+                    }
+                },
+                new Restaurante
+                {
+                    Nome = "Tesqwerqwrqwerte",
+                    Capacidade = 100,
+                    Categoria = Categoria.Comum,
+                    Localizacao = new Localizacao
+                    {
+                        Bairro = "Liberdade",
+                        Logradouro = "Rua Sete de Setembro, 1045 - Liberdade",
+                        Latitude = -29.712571,
+                        Longitude = -51.13636
+                    },
+                    Contato = new Contato
+                    {
+                        Site = "www.garfao.com",
+                        Telefone = "(51) 3587-7700"
+                    },
+                    PratoDoDia = new PratoDoDia
+                    {
+                        Nome = "asdas",
+                        Valor = 5,
+                        Ingredientes = "dsfsdf",
+                        DataAtualizacao = DateTime.Now,
+                        Descricao = "Lorem ipsum dolor sit amet"
                     }
                 }
             );

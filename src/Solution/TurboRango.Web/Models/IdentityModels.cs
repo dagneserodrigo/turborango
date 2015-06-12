@@ -38,6 +38,6 @@ namespace TurboRango.Web.Models
 
         public DbSet<Localizacao> Localizacoes { get; set; }
 
-        public System.Data.Entity.DbSet<TurboRango.Dominio.Prato> Pratoes { get; set; }
+        public DbSet<PratoDoDia> Pratoes { get; set; }
     }
 }

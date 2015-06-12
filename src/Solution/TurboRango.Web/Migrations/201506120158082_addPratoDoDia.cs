@@ -3,12 +3,12 @@ namespace TurboRango.Web.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CriarEntidadePrato : DbMigration
+    public partial class addPratoDoDia : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Pratoes",
+                "dbo.PratoDoDias",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -16,19 +16,20 @@ namespace TurboRango.Web.Migrations
                         Ingredientes = c.String(),
                         Valor = c.Decimal(precision: 18, scale: 2),
                         DataAtualizacao = c.DateTime(),
-                        Restaurante_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Restaurantes", t => t.Restaurante_Id)
-                .Index(t => t.Restaurante_Id);
+                .PrimaryKey(t => t.Id);
             
+            AddColumn("dbo.Restaurantes", "PratoDoDia_Id", c => c.Int());
+            CreateIndex("dbo.Restaurantes", "PratoDoDia_Id");
+            AddForeignKey("dbo.Restaurantes", "PratoDoDia_Id", "dbo.PratoDoDias", "Id");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Pratoes", "Restaurante_Id", "dbo.Restaurantes");
-            DropIndex("dbo.Pratoes", new[] { "Restaurante_Id" });
-            DropTable("dbo.Pratoes");
+            DropForeignKey("dbo.Restaurantes", "PratoDoDia_Id", "dbo.PratoDoDias");
+            DropIndex("dbo.Restaurantes", new[] { "PratoDoDia_Id" });
+            DropColumn("dbo.Restaurantes", "PratoDoDia_Id");
+            DropTable("dbo.PratoDoDias");
         }
     }
 }

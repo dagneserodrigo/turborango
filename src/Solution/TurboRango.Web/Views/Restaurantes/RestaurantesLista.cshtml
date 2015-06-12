@@ -1,0 +1,93 @@
+﻿@model IEnumerable<TurboRango.Dominio.Restaurante>
+
+@{
+    ViewBag.Title = "Restaurantes";
+}
+
+<h2>Restaurantes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem => item.PratoDoDia.Id)
+            <button class="btn btn-default pratoDoDia">Prato do dia</button>
+        </td>
+    </tr>
+}
+
+</table>
+
+<div id="myModal" class="modal fade" role="dialog" style="display:none;">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Prato do Dia</h4>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeModal" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $('.pratoDoDia').click(function () {
+            $.ajax({
+                url: '/PratosDoDia/PratoDoDia/' + $(this).prev().val(),
+            type: 'POST',
+            dataType: 'json',
+            })
+            .done(function (data) {
+                console.log(data);
+                $('#myModal').modal('show');
+                if (data.prato.Nome) {
+                    $('.modal-body').append('<p>Nome: ' + data.prato.Nome + '<p>');
+                }
+                if (data.prato.Ingredientes) {
+                    $('.modal-body').append('<p>Ingredientes: ' + data.prato.Ingredientes + '<p>');
+                }
+                if (data.prato.Descricao) {
+                    $('.modal-body').append('<p>Descrição: ' + data.prato.Descricao + '<p>');
+                }
+                if (data.prato.Valor) {
+                    $('.modal-body').append('<p>Valor: R$' + data.prato.Valor + '<p>');
+                }
+            })
+        });
+
+        $('.closeModal').click(function () {
+            $('.modal-body').empty();
+        });
+    </script>
+}
